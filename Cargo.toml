@@ -1,0 +1,15 @@
+[package]
+name = "gba-sdk"
+version = "0.1.0"
+edition = "2021"
+license = "MPL-2.0"
+readme = "README.md"
+links = "gba"
+
+[features]
+default = ["rt-support"]
+rt-support = []
+
+[package.metadata.docs.rs]
+default-target = "thumbv4t-none-eabi"
+cargo-args = ["-Z", "build-std"]
