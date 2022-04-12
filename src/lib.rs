@@ -10,3 +10,4 @@
 pub mod rt;
 
 pub mod hw;
+pub mod video;

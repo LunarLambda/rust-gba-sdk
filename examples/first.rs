@@ -7,11 +7,14 @@
 
 use gba_sdk as gba;
 
+use gba::video::Mode3;
+
 fn main() {
     let mut video = gba::hw::video().mode3();
 
-    video.enable_bg2();
-    video.write();
+    video.write(
+        Mode3::new().enable_bg2()
+    );
 
     video.write_pixel(120, 80, 0x001F);
     video.write_pixel(136, 80, 0x03E0);

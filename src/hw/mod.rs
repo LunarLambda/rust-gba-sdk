@@ -4,9 +4,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-pub mod video;
-
-use video::Video;
+use crate::video::{Video, AnyMode};
 
 static mut SINGLETONS: u32 = 0;
 
@@ -22,8 +20,7 @@ fn take(flag: u32) {
 
 const FLAG_VIDEO: u32 = 1 << 0;
 
-
-pub fn video() -> Video {
+pub fn video() -> Video<AnyMode> {
     take(FLAG_VIDEO);
 
     Video::new()
